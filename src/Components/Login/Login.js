@@ -33,9 +33,41 @@ const Login = () => {
         console.log(errorMessage);
       });
   };
+  const handleSubmit = () => {
+    console.log("submit clicked");
+  };
+  const handleChange = (event) => {
+    console.log(event.target.value);
+  };
   return (
     <div>
-      <button onClick={handleGoogleSignIn}>Sign in with google</button>
+      <button className="p-2 m-2 btn-warning" onClick={handleGoogleSignIn}>
+        Sign in with google
+      </button>
+      <br />
+      <h2 className="mt-5">Sign Up with email</h2>
+      <form action="" onSubmit={handleSubmit}>
+        <input
+          onChange={handleChange}
+          className="mb-3"
+          type="text"
+          placeholder="enter your email address"
+          required
+        />
+        <br />
+        <input
+          onChange={handleChange}
+          type="password"
+          placeholder="enter your password"
+          required
+        />
+        <br />
+        <input
+          className="mt-3 bg-success text-white"
+          type="submit"
+          value="submit"
+        />
+      </form>
     </div>
   );
 };
