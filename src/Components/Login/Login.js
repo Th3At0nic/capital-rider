@@ -4,8 +4,13 @@ import "firebase/auth";
 import "firebase/analytics";
 import firebaseConfig from "../../firebase.config";
 import { UserContext } from "../../App";
+import { useHistory, useLocation } from "react-router";
 
 const Login = () => {
+  let history = useHistory();
+  let location = useLocation();
+  let { from } = location.state || { from: { pathname: "/" } };
+
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   console.log(loggedInUser);
   if (firebase.apps.length === 0) {
@@ -20,6 +25,7 @@ const Login = () => {
         const { displayName, email } = result.user;
         const signedInUser = { name: displayName, email };
         setLoggedInUser(signedInUser);
+        history.replace(from);
         console.log(result.user, "clicked", displayName, email);
       })
       .catch((error) => {

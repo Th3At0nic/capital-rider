@@ -10,6 +10,7 @@ import Bus from "./Components/Bus/Bus";
 import Car from "./Components/Car/Car";
 import Train from "./Components/Train/Train";
 import NoMatch from "./Components/NoMatch/NoMatch";
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 
 export const UserContext = createContext();
 
@@ -29,18 +30,18 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/bike">
+          <PrivateRoute path="/bike">
             <Bike />
-          </Route>
-          <Route path="/bus">
+          </PrivateRoute>
+          <PrivateRoute path="/bus">
             <Bus />
-          </Route>
-          <Route path="/car">
+          </PrivateRoute>
+          <PrivateRoute path="/car">
             <Car />
-          </Route>
-          <Route path="/train">
+          </PrivateRoute>
+          <PrivateRoute path="/train">
             <Train />
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login />
           </Route>
