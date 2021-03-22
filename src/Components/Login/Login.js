@@ -7,6 +7,7 @@ import { UserContext } from "../../App";
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+  console.log(loggedInUser);
   if (firebase.apps.length === 0) {
     firebase.initializeApp(firebaseConfig);
   }
@@ -22,10 +23,7 @@ const Login = () => {
         console.log(result.user, "clicked", displayName, email);
       })
       .catch((error) => {
-        const errorCode = error.code;
         const errorMessage = error.message;
-        const email = error.email;
-        const credential = error.credential;
         console.log(errorMessage);
       });
   };
