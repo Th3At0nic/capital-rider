@@ -1,4 +1,5 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Components/Home/Home";
@@ -22,34 +23,36 @@ function App() {
       Name: {loggedInUser.name} <br />
       Email: {loggedInUser.email}
       <Navbar />
-      <Router>
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <PrivateRoute path="/bike">
-            <Bike />
-          </PrivateRoute>
-          <PrivateRoute path="/bus">
-            <Bus />
-          </PrivateRoute>
-          <PrivateRoute path="/car">
-            <Car />
-          </PrivateRoute>
-          <PrivateRoute path="/train">
-            <Train />
-          </PrivateRoute>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="*">
-            <NoMatch />
-          </Route>
-        </Switch>
-      </Router>
+      <div className="App">
+        <Router>
+          <Switch>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <PrivateRoute path="/bike">
+              <Bike />
+            </PrivateRoute>
+            <PrivateRoute path="/bus">
+              <Bus />
+            </PrivateRoute>
+            <PrivateRoute path="/car">
+              <Car />
+            </PrivateRoute>
+            <PrivateRoute path="/train">
+              <Train />
+            </PrivateRoute>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="*">
+              <NoMatch />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
     </UserContext.Provider>
   );
 }
