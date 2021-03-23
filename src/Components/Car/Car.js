@@ -1,9 +1,10 @@
 import React from "react";
+import Destination from "../Destination/Destination";
 
 const Car = () => {
   return (
-    <div className="mt-5 p-5 bg-info text-white container">
-      <h2>THis is car.</h2>
+    <div className="mt-5 p-5">
+      <Destination />
     </div>
   );
 };
