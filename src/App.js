@@ -19,11 +19,11 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
 
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      Name: {loggedInUser.name} <br />
-      Email: {loggedInUser.email}
-      <Navbar />
-      <div className="App">
+    <div className="App">
+      <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+        Name: {loggedInUser.name} <br />
+        Email: {loggedInUser.email}
+        <Navbar />
         <Router>
           <Switch>
             <Route path="/home">
@@ -52,8 +52,8 @@ function App() {
             </Route>
           </Switch>
         </Router>
-      </div>
-    </UserContext.Provider>
+      </UserContext.Provider>
+    </div>
   );
 }
 
