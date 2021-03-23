@@ -3,7 +3,7 @@ import CapitalRider from "../CapitalRider/CapitalRider";
 
 const Home = () => {
   return (
-    <div>
+    <div className="background">
       <CapitalRider />
     </div>
   );
