@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import { UserContext } from "../../App";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import {
   createUserWithEmailAndPassword,
   handleGoogleSignIn,
@@ -92,9 +94,13 @@ function Login() {
       style={{ textAlign: "center" }}
     >
       {user.isSignedIn ? (
-        <button onClick={signOut}>Sign Out</button>
+        <button className="btn-warning pt-1 pb-1 mt-2" onClick={signOut}>
+          Sign Out
+        </button>
       ) : (
-        <button onClick={googleSignIn}>Sign in</button>
+        <button className="btn btn-warning m-2 p-3 mt-2" onClick={googleSignIn}>
+          <FontAwesomeIcon icon={faGoogle} /> Sign In With Google
+        </button>
       )}
       <br />
       {user.isSignedIn && (
