@@ -87,7 +87,10 @@ function Login() {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div
+      className="bg-info container text-white"
+      style={{ textAlign: "center" }}
+    >
       {user.isSignedIn ? (
         <button onClick={signOut}>Sign Out</button>
       ) : (
@@ -114,6 +117,7 @@ function Login() {
       <form onSubmit={handleOnSubmit}>
         {newUser && (
           <input
+            className="mb-3"
             type="text"
             name="name"
             onBlur={handleBlur}
@@ -122,6 +126,7 @@ function Login() {
         )}
         <br />
         <input
+          className="mb-3"
           type="text"
           onBlur={handleBlur}
           name="email"
@@ -130,6 +135,7 @@ function Login() {
         />
         <br />
         <input
+          className="mb-3"
           type="password"
           onBlur={handleBlur}
           name="password"
